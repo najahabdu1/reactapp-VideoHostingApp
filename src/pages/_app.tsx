@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { useState,useEffect } from 'react'
 import { Navbar } from '../components/Navbar'
 import { Sidebar } from "../components/Sidebar"
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const MyApp =({ Component, pageProps }: AppProps) => {
   const [isSSR, setIsSSR]= useState(true);
