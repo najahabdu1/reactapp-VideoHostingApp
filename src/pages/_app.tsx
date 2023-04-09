@@ -11,7 +11,7 @@ const MyApp =({ Component, pageProps }: AppProps) => {
     setIsSSR(false);  
   },[]);
   if (isSSR) return null;
-  
+
   return ( 
     <GoogleOAuthProvider clientId={'1019133184563-vr2vp8no9ntkf3ab81i06q7kqgpi0flj.apps.googleusercontent.com'}> 
     <div>
