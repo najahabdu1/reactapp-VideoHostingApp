@@ -6,6 +6,7 @@ import axios from "axios";
 import useAuthStore from "../../store/authStore";
 import { client } from "@component/utils/client";
 import { SanityAssetDocument } from "@sanity/client";
+import { topics } from "@component/utils/constants";
 
 export const upload = () => {
   const [isLoading, setisLoading] = useState(false);
@@ -29,8 +30,8 @@ export const upload = () => {
     }
   } 
   return (
-    <div className="flex w-full h-full">
-      <div className="bg-white rounded-lg">
+    <div className="flex w-full h-full absolute left-0 top-[60-px] mb-10 pt-20 bg-[#F8F8F8] justify-center">
+      <div className="bg-white rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6">
         <div>
           <div>
             <p className="text-2xl font-bold">UPLOAD VIDEO</p>
@@ -43,7 +44,7 @@ export const upload = () => {
             <div>
               {videoAsset ? (
                 <div>
-                    <video className="rounded-xl h-[450px] mt-16 bg-black" src={videoAsset.url} loop controls></video>
+                    <video className="rounded-xl h-[450px] w-[250px] mt-16 bg-black" src={videoAsset.url} loop controls></video>
                 </div>
               ):(
                 <label className='cursor-pointer'>
@@ -58,7 +59,7 @@ export const upload = () => {
                   <p className="text-gray-300 text-center text-sm">
                     MP4 or MKV or WebM <br/>
                     720x1280 or higher <br/>
-                    Up to 10 minutes <br/>
+                    Up to 120 seconds <br/>
                     Less than 2GB 
                   </p>
                   <p className="bg-[#F51997] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
@@ -73,12 +74,25 @@ export const upload = () => {
               )} 
             </div>
            )}
-              
-               
-              
-           
+           {wrongFileType &&(
+            <p className="text-center text-xl text-red-400 font-semibold mt-4 w-[250px]"> Please select a valid video</p>
+           )}
           </div>
         </div>
+        <div className="flex flex-col gap-3 pb-10">
+              <label className="text-md font-medium">Caption</label>
+              <input className="rounded outline-none text-md border-2 border-gray-200 p-2 hover:border-gray-500" type="text" value="" onChange={()=>{}} >
+              </input>
+              <label className="text-md font-medium">Choose a category</label>
+              <select className="outline-none capitalize bg-white text-gray-700 text-md border-2 border-gray-200 lg:p-4 p-2 rounded cursor-pointer hover:bg-slate-300" onChange={()=>{}}>
+                {topics.map((topic)=>(
+                    <option className="outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300 " key={topic.name} value={topic.name}>
+                      {topic.name}
+                    </option>
+                ))}
+              </select>
+            </div>
+        
       </div>
     </div>
     
