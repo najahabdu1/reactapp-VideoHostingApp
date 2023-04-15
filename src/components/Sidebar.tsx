@@ -32,17 +32,15 @@ export const Sidebar = () => {
                   <AiFillHome/>
                 </p>
                 <span  className='text-xl hidden xl:block'>
-                  For You
+                 {userProfile && (
+                    <div>For You, {userProfile.userName}</div>
+                    
+                 )}
+                  
                 </span>
               </div>
             </Link>
           </div>
-          {userProfile && (
-            <div className='px-2 py-4 hidden xl:block'>
-              <p className='text=grey-400'>Welcome Back , {userProfile.userName}</p>
-            
-            </div>
-          )}
           <Discover />
           <SuggestAccounts />
           <Footer />
