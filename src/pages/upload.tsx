@@ -70,12 +70,12 @@ export const upload = () => {
           </div>
           <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-between items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-red-50">
            {isLoading ? (
-              <p>Uploading</p>
+              <p className="'text-center text-3xl text-red-400 font-semibold">Uploading</p>
            ) : (
             <div>
               {videoAsset ? (
-                <div>
-                    <video className="rounded-xl h-[450px] w-[250px] mt-16 bg-black" src={videoAsset.url} loop controls></video>
+                <div className=" rounded-3xl w-[300px]  p-4 flex flex-col gap-6 justify-center items-center">
+                    <video className="rounded-xl h-[450px] w-[250px] mt-[-21%] bg-black" src={videoAsset.url} loop controls></video>
                 </div>
               ):(
                 <label className='cursor-pointer'>
