@@ -7,6 +7,7 @@ import useAuthStore from "../../store/authStore";
 import { client } from "@component/utils/client";
 import { SanityAssetDocument } from "@sanity/client";
 import { topics } from "@component/utils/constants";
+import { URL } from "@component/utils";
 
 export const upload = () => {
   const [isLoading, setisLoading] = useState(false);
@@ -55,7 +56,7 @@ export const upload = () => {
         },
         topic:category
       }
-      await axios.post('http://localhost:3000/api/post',document);
+      await axios.post(`${URL}/api/post`,document);
       router.push('/');
     }
   } 

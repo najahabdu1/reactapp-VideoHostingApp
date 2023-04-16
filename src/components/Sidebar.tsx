@@ -14,7 +14,7 @@ import useAuthStore from '../../store/authStore';
 export const Sidebar = () => {
   const [showSidebar, setshowSidebar]= useState(true);
   const normalLink ="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded";
-  const {userProfile ,addUser, removeUser} =useAuthStore();
+  const {userProfile ,addUser, removeUser}: any =useAuthStore();
   return (
     <div>
       <div
