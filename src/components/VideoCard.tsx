@@ -67,7 +67,10 @@ const VideoCard: NextPage<IProps> = ({post}) => {
         onMouseEnter={()=>setIsHover(true)}
         onMouseLeave={() =>setIsHover(false)}>
           <Link href={`/detail/${post._id}`}>
-          <p className="mt-4"> {post.caption}</p>
+          <div className='flex flex-col px-10'>
+          <p className="mt-4"> {post.caption}</p> </div>
+          <div className='flex flex-col px-10'>
+          </div>
             <video 
             loop
             ref={VideoRef}
