@@ -4,10 +4,10 @@ import { Video } from '../../types';
 import VideoCard from '@component/components/VideoCard';
 import NoResults from '@component/components/NoResults';
 import { URL } from '@component/utils';
- interface Iprops {
+ interface IProps {
   videos: Video[]
  }
-const Home = ({videos}: Iprops)=> {
+const Home = ({videos}: IProps)=> {
   console.log(videos);
   return (
     <div className='flex flex-col gap-10 videos h-full'>
@@ -16,7 +16,7 @@ const Home = ({videos}: Iprops)=> {
         <VideoCard post={video} key={video._id}/>
       ))
       ) : (
-        <NoResults text={'No Videos'} />
+        <NoResults />
 
       )}
     </div>

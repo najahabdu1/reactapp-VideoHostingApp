@@ -48,7 +48,7 @@ const Detail = ({ postDetails }: IProps) => {
 
   const handleLike = async (like: boolean) => {
     if (userProfile) {
-      const {data} = await axios.put(`${URL}/api/like`, {
+      const {data} = await axios.put(`http://localhost:3000/api/like`, {
         userId: userProfile._id,
         postId: post._id,
         like
