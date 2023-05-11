@@ -43,4 +43,4 @@ interface IProps{
     
   )
 }
-export default LikeButton
+export default LikeButton;

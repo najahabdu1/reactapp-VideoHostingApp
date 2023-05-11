@@ -13,7 +13,6 @@ const authStore = (set: any) => ({
 
   fetchAllUsers: async () => {
     const response = await axios.get(`http://localhost:3000/api/users`);
-
     set({ allUsers: response.data });
   },
 });
