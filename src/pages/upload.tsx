@@ -24,6 +24,9 @@ const Upload = () => {
   useEffect(() => {
     if (!userProfile) router.push('/');
   }, [userProfile, router]);
+  useEffect(() => {
+    document.title = "Upload your video";
+  }, []);
 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];

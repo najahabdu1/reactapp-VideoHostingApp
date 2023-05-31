@@ -12,8 +12,6 @@ import LikeButton from '../../components/LikeButton';
 import { Video } from '../../../types';
 import axios from 'axios';
 import useAuthStore from '../../../store/authStore';
-import { URL } from '@component/utils';
-
 interface IProps {
   postDetails: Video;
 }
@@ -45,6 +43,9 @@ const Detail = ({ postDetails }: IProps) => {
       videoRef.current.muted = isVideoMuted;
     }
   }, [post, isVideoMuted]);
+  useEffect(() => {
+    document.title = `Video Page`;
+  }, []);
 
   const handleLike = async (like: boolean) => {
     if (userProfile) {
